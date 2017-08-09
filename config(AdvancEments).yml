@@ -81,7 +81,7 @@ RestrictAdventure: true
 
 # Stop all stats from increasing when player in a specific world, including PlayedTime (delete the [] before adding values).
 # Connection achievements will only be handled once a player enters a non-excluded world.
-ExcludedWorlds: []
+ExcludedWorlds: [- Open_World]
 #  - yourWorld1
 #  - yourWorld2
 
@@ -287,9 +287,14 @@ Breaks:
 Kills:
   creeper: 
     1:
+      Message: "Kill your first Creeper"
+      DisplayName: Sizzler
+      Name: kill_1_creeper
+      Reward:
+        Experience: 27
   zombie:
     1:
-      Message: "&8The first time you killed a zombie!"
+      Message: "The first time you killed a zombie!"
       DisplayName: The Walking Dead
       Name: kills_1_zombie
       Reward:
@@ -354,39 +359,25 @@ Deaths:
     
 # When an arrow is shot.
 Arrows:
-  50:
-    Message: 50 arrows shot!
-    Name: arrows_50
-    DisplayName: Arrows Around the Place
-    
+  
 # When a snowball is thrown.  
 Snowballs:
-  1000:
-    Message: 1000 snowballs thrown. That's the spirit!
-    Name: snowballs_1000
-    DisplayName: Winter Addict 
-    
+  
 # When an egg is thrown.  
 Eggs:
-  1000:
-    Message: 1000 eggs thrown!
-    Name: eggs_1000
-    DisplayName: Omelet Addict 
-    
+  
 # When a fish is caught. 
 Fish:
   1:
     Message: The first time you caught a fish!
     Name: fish_1
     DisplayName: Time for Fish and Chips
+    Reward:
+      Experience: 19
     
 # When a treasure is caught with a fishing rod.
 Treasures:
-  1:
-    Message: Your first treasure from the sea!
-    Name: treasure_1
-    DisplayName: Treasure Hunter
-
+  
 # When a tool/armor/weapon is broken.  
 ItemBreaks:
   1:
@@ -430,9 +421,9 @@ LavaBuckets:
     
 # When a bucket is filled with water.
 WaterBuckets:
-  15:
-    Message: 15 buckets filled with water!
-    Name: waterbuckets_15
+  2:
+    Message: 2 buckets filled with water!
+    Name: waterbuckets_2
     DisplayName: Fireman    
     
 # When a trade with a villager is made.
@@ -455,14 +446,12 @@ Enchantments:
     Message: 5 objects enchanted!
     Name: enchantments_5
     DisplayName: "&5Wizard"
+    Reward:
+      Experience: 35
     
 # When a bed is entered. 
 Beds:  
-  5:
-    Message: You entered a bed 5 times!
-    Name: bed_5
-    DisplayName: Sleepy Guy 
-    
+  
 # Maximum level reached.    
 MaxLevel:  
   10:
@@ -472,31 +461,44 @@ MaxLevel:
     
 # When a potion is consumed.
 ConsumedPotions:
-  100:
+  10:
     Message: Drinking weird beverages all the time...
-    Name: consumedpotions_100
+    Name: consumedpotions_10
     DisplayName: Alcoholic 
-    
+    Reward:
+      Experience: 100
 # Amount of time played on the server (in hours, use integers).
 PlayedTime:
-  1:
-    Message: You played during one hour on the server!
-    Name: playedtime_1
-    DisplayName: First Hour
-    
+  
 # When a distance is traveled by foot.
 DistanceFoot:
+  500:
+    Message: You traveled 500 blocks by foot!
+    Name: distancefoot_500
+    DisplayName: And I would walk 500 More!
+    Reward:
+      Experience: 15
   1000:
     Message: You traveled 1000 blocks by foot!
     Name: distancefoot_1000
     DisplayName: Big Walker 
-    
+    Reward:
+      Experience: 25
+  2000:
+    Message: You traveled 2000 blocks by foot!
+    Name: distancefoot_2000
+    DisplayName:  
+    Reward:
+      Experience: 45
+      
 # When a distance is traveled on a pig.
 DistancePig:
   100:
     Message: You traveled 100 blocks on a pig!
     Name: distancepig_100
     DisplayName: Carrot on a Stick Master
+    Reward:
+      Experience: 100
     
 # When a distance is traveled on a horse.
 DistanceHorse:
@@ -504,43 +506,36 @@ DistanceHorse:
     Message: You traveled 500 blocks on a horse!
     Name: distancehorse_500
     DisplayName: The Avener
+    Reward:
+      Experience: 25
     
 # When a distance is traveled in a minecart.
 DistanceMinecart:
-  100:
-    Message: You traveled 100 blocks in a minecart!
-    Name: distanceminecart_100
-    DisplayName: Carting Fan
-
+  
 # When a distance is traveled in a boat.
 DistanceBoat:
   200:
     Message: You traveled 200 blocks in a boat!
     Name: distanceboat_200
     DisplayName: Great Sailor
+    Reward:
+      Experience: 65
 
 # When a distance is traveled with elytra.
 # Ignored on Minecraft versions prior to 1.9, add it to DisabledCategories list.
 DistanceGliding:
-  100:
-    Message: You traveled 100 blocks with elytra!
-    Name: distancegliding_100
-    DisplayName: Angel
-    
+  
 # When a distance is traveled on a llama.
 # Ignored on Minecraft versions prior to 1.11, add it to DisabledCategories list.
 DistanceLlama:
-  50:
-    Message: You traveled 50 blocks on a llama!
-    Name: distancellama_50
-    DisplayName: Llama Rider
-
+  
 # When an item is dropped on the ground.
 ItemDrops:
   15:
     Message: You're killing the planet!
     Name: itemdrops_15
     DisplayName: Polluter
+    
     
 # When an item is picked up from the ground.
 ItemPickups:
@@ -551,32 +546,24 @@ ItemPickups:
     
 # When soil is plowed with a hoe.
 HoePlowings:
-  10:
-    Message: You plowed the ground 10 times!
-    Name: hoeplowings_10
-    DisplayName: Farmer
-    Reward:                 
-        Item: cookie 15
-    
+  
 # When bone meal is used to fertilise plants.
 Fertilising:
-  15:
-    Message: You used bone meal on plants 15 times!
-    Name: fertilising_15
-    DisplayName: Gardener
-    
+  
 # When an animal is tamed.
 Taming:
   1:
     Message: You tamed your first animal!
     Name: taming_1
     DisplayName: Tamer
+    Reward: 
+      Experience: 30
 
 # When animals breed.
 # Use an Entity name, in lower case.
 Breeding:
   sheep:
-    100:
+    1:
       Message: You bred your first animal!
       Name: breeding_1
       DisplayName: Breeder
@@ -590,19 +577,20 @@ Brewing:
     
 # When a firework is launched.
 Fireworks:
-  10:
-    Message: You launched 10 fireworks!
-    Name: fireworks_10
-    DisplayName: Pyrotechnist
+  1:
+    Message: Used 1 Firework
+    Name: firework_1
+    DisplayName: RocketMan!
     Reward:
-      Experience: 200
-
+      Experience: 100
 # When a music disc is played.
 MusicDiscs:
   1:
     Message: One jukebox used!
     Name: musicdiscs_1
     DisplayName: DJ
+    Reward:
+      Experience: 
 
 # When a player teleports with an enderpearl.
 EnderPearls:
@@ -610,37 +598,23 @@ EnderPearls:
     Message: 10 teleportations with ender pearls!
     Name: enderpearls_10
     DisplayName: Teleport Man
+    Reward:
+      Experience: 40
     
 # When a player gives a pet to another player (requires Pet Master plugin version 1.4 or above).
 PetMasterGive:
-  3:
-    Message: 3 pets given to friends!
-    Name: petmastergive_3
-    DisplayName: Donator
-
+  
 # When a player receives a pet from another player (requires Pet Master plugin version 1.4 or above).
 PetMasterReceive:
-  10:
-    Message: 10 pets received from friends!
-    Name: petmasterreceive_10
-    DisplayName: Receiver
-    
+  
 # When an item is smelt in a furnace.
 Smelting:
-  250:
-    Message: 250 items smelt in a furnace!
-    Name: smeltitems_250
-    DisplayName: The Smelter
-    
+  
 # When a player enters a specific command (specify command prefixes in lower case without initial slash).
 # For instance a command /awf add world from the AntiWorldFly plugin matches with subcategory 'awf add'.
 # Aliases of a given command will also be taken into account.
 PlayerCommands:
   aach stats:
-    10:
-      Message: Run the stats command 10 times!
-      Name: playercommand_aachstats_10
-      DisplayName: Statistician
     
 #===========================OOO=OOO===========================#
 # VI-------------------------------------------------------VI #
